@@ -63,13 +63,16 @@
     .feature p { margin: 0; color: var(--muted); font-size: .92rem; }
     .product { padding: 0 24px 100px; }
     .product-card { width: min(980px, 100%); margin: auto; display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); background: #fffefa; }
-    .product-photo { min-height: 340px; background: linear-gradient(135deg, #e8dfd0, #f8f3e8); display: grid; place-items: center; color: var(--green); font-size: 4rem; }
+    .product-photo { min-height: 340px; overflow: hidden; background: #e8dfd0; }
+    .product-photo img { display: block; width: 100%; height: 100%; min-height: 340px; object-fit: cover; object-position: center; }
     .product-info { align-self: center; padding: 38px clamp(28px, 5vw, 60px); }
     .product-info h3 { margin: 14px 0 10px; font: 2rem var(--serif); }
     .product-info p { color: var(--muted); }
     .price { margin: 20px 0 4px; color: var(--green-dark); font: 2.5rem var(--serif); }
     .price span { font: 1rem var(--sans); }
     .price-note { margin-bottom: 22px; color: var(--muted); font-size: .85rem; }
+    .product-credit { grid-column: 1 / -1; margin: 0; padding: 10px 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .75rem; }
+    .product-credit a { text-underline-offset: 3px; }
     .origin { padding: 0 24px 100px; }
     .origin-inner { width: min(1160px, 100%); margin: auto; display: grid; grid-template-columns: 1fr 1fr; background: var(--green-dark); color: #f9f5ec; }
     .origin-photo { min-height: 430px; background: url('https://upload.wikimedia.org/wikipedia/commons/7/7b/SalersBreed_YoungCow.JPG') center 43%/cover; }
@@ -108,7 +111,8 @@
       .features { grid-template-columns: 1fr; }
       .product { padding: 0 18px 72px; }
       .product-card { grid-template-columns: 1fr; }
-      .product-photo { min-height: 220px; }
+      .product-photo, .product-photo img { min-height: 240px; height: 240px; }
+      .product-credit { grid-column: auto; }
       .product-info { padding: 30px 26px; }
       .origin { padding: 0 18px 72px; }
       .origin-inner { grid-template-columns: 1fr; }
@@ -172,7 +176,9 @@
     </section>
     <section class="product" id="produits">
       <div class="product-card">
-        <div class="product-photo" role="img" aria-label="Illustration d'une belle pièce de viande">✦</div>
+        <div class="product-photo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cote_de_boeuf_p1040932.jpg" alt="Côte de bœuf servie avec des frites" loading="lazy" />
+        </div>
         <div class="product-info">
           <span class="eyebrow">La pièce à partager</span>
           <h3>Côte de bœuf Salers</h3>
@@ -181,6 +187,7 @@
           <p class="price-note">Poids disponible : de 500 g à 2 kg. Prix calculé selon le poids réel de la pièce.</p>
           <a class="button" href="mailto:bonjour@maisonsalers.fr?subject=Commande%20-%20c%C3%B4te%20de%20b%C5%93uf%20Salers">Demander une pièce</a>
         </div>
+        <p class="product-credit">Photo de côte de bœuf par David Monniaux, sous licences <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> et <a href="https://creativecommons.org/licenses/by-sa/2.0/fr/">CC BY-SA 2.0 FR</a>, via <a href="https://commons.wikimedia.org/wiki/File:Cote_de_boeuf_p1040932.jpg">Wikimedia Commons</a>.</p>
       </div>
     </section>
     <section class="origin" id="terroir">
